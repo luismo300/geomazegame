@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/azul">
+
+    <!-- Título del Nivel -->
+    <TextView
+        android:id="@+id/textNivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nivel 1"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <!-- Pregunta -->
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cuál de las siguientes figuras es un triángulo?"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <!-- Selector -->
+    <ImageView
+        android:id="@+id/selector"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/ic_selector"
+        android:layout_alignParentTop="true" />
+
+    <!-- Opción 1 -->
+    <ImageView
+        android:id="@+id/option1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/triangle" />
+
+    <!-- Opción 2 -->
+    <ImageView
+        android:id="@+id/option2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/circulo" />
+
+    <!-- Opción 3 -->
+    <ImageView
+        android:id="@+id/option3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="400dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/cuadrado" />
+</RelativeLayout>
