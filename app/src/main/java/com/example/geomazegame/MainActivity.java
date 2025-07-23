@@ -186,8 +186,28 @@ public class MainActivity extends Activity implements SensorEventListener {
 
             selector.setX(selectorX);
             selector.setY(selectorY);
+        } else if (event.sensor.getType() == Sensor.TYPE_ROTATION_VECTOR) {
+            float[] rotationMatrix = new float[9];
+            float[] orientationAngles = new float[3];
+
+            SensorManager.getRotationMatrixFromVector(rotationMatrix, event.values);
+            SensorManager.getOrientation(rotationMatrix, orientationAngles);
+
+            float pitch = orientationAngles[1];   // Inclinación hacia adelante/atrás
+            float roll = orientationAngles[2];    // Inclinación lateral
+
+            // Mover el selector en base al roll y pitch
+            selectorX += roll * selectorSpeed * 5;
+            selectorY -= pitch * selectorSpeed * 5;
+
+            selectorX = Math.max(0, Math.min(selectorX, screenWidth - selector.getWidth()));
+            selectorY = Math.max(0, Math.min(selectorY, screenHeight - selector.getHeight()));
+
+            selector.setX(selectorX);
+            selector.setY(selectorY);
         }
     }
+
 
     private void checkSelection() {
         if (!canValidate) return;
